@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a8c9f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            text-align: center;
+        }
+
+        .main {
+            background-color: rgba(255, 255, 255, 0.5);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px; /* Increased width */
+            max-width: 90%; /* Make it responsive */
+        }
+
+        .main h2 {
+            color: #3a6998;
+            margin-bottom: 20px;
+        }
+
+        .main h1,p {
+            color: #0d0d0e;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #090505;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"],
+        select {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #6d8ebd;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        #textboxContainer {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .main {
+                width: 100%; /* Adjust to 100% for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Kamaraj College of Engineering and Technology</h1>
+        <h2>Web Applications using Django Framework</h2>
+        <p>Janavarshini G, B.TECH IT-B</p>
+        <h2>Registration Form</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+</body>
+</html>
